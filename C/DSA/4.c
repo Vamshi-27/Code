@@ -49,7 +49,7 @@ void convertip(char infix[],char postfix[])
     char symbol;
     int i,j=0;
     push('#');
-    for(i=0;i<strlen(inix);i++)
+    for(i=0;i<strlen(infix);i++)
     {
         symbol=infix[i];
         switch(symbol)

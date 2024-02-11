@@ -112,7 +112,7 @@ void display()
 
 int main()
 {
-  int choice, n, i;
+  int choice,n,i;
 
   while(1)
   {
@@ -122,7 +122,7 @@ int main()
     {
       case 1:
             printf("Enter the no. students:\n");
-            scanf("%d", &n);
+            scanf("%d",&n);
             for(i=0;i<n;i++)
                 insertbegin();
             break;

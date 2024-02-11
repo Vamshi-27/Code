@@ -25,6 +25,6 @@ public class Sum
                 break;
         }
         System.out.println("Sum of first four elements in the array = "+sum);
-        s.close();              //Clossing the Scanner Class
+        s.close();              //Closing the Scanner Class
     }
 }

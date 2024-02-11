@@ -8,7 +8,7 @@ public class AddMatrix
         int i,j;
         if(args.length == 0)
         {
-            System.out.println("Invalid Input");
+            System.out.println("Invalid Input\nPlease enter the size of the matrix in the Command Line Argument");
             System.exit(0);
         }
         int n=Integer.parseInt(args[0]);

@@ -1,32 +1,27 @@
-/*Develop a c program to implement the Process system calls
-fork (), exec(),wait(), create process,terminate process*/
-
 #include<stdio.h>
 #include<stdlib.h>
-#include<sys/types.h>
-#include<sys/wait.h>
 #include<unistd.h>
+#include<sys/types.h>
 
 int main()
 {
   pid_t pid;
-
-  pid=fork();
+  pid = fork();
 
   if(pid<0)
   {
-    printf("Fork failed\n");
-    exit(1);
+    printf("Fork Failed\n");
+    exit(0);
   }
-  else if(pid == 0)
+  else if(pid==0)
   {
-    printf("child process\n");
-    execlp("ls", "ls", "-l", NULL);
+    printf("Child Process\n");
+    execlp("ls","ls","-l",NULL);
   }
   else
   {
     wait(NULL);
-    printf("Child Complete\n");
+    printf("Child is created sucessfully\n");
     exit(0);
   }
 }

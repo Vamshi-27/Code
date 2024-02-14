@@ -3,7 +3,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
-int main() {
+int main()
+{
   int fd;
   char buf[1024];
   char *myfifo = "/tmp/myfifo";

@@ -13,17 +13,17 @@ int main()
 
   pid = fork();
 
-  if(pid<0)
+  if (pid < 0)
   {
     printf("Fork failed\n");
     exit(1);
   }
-  else if(pid == 0)
+  else if (pid == 0)
   {
     printf("child process\n");
     execlp("ls", "ls", "-l", NULL);
   }
-  else 
+  else
   {
     wait(NULL);
     printf("Child Complete\n");

@@ -4,7 +4,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 #define MAX_BUF 1024
-int main() {
+int main()
+{
   int fd;
   char *myfifo = "/tmp/myfifo";
   char buf[MAX_BUF];

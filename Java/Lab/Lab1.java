@@ -1,29 +1,35 @@
+package Java.Lab;
+
 import java.util.Scanner;
 
-class Employee
+class Employee 
 {
     String id, name;
     double salary, percentage;
 
-    void read() 
+    void read()
     {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter ID, Name, Salary");
         id = s.next();
         name = s.next();
         salary = s.nextDouble();
+        s.close();
     }
 
-    void display() {
+
+    void display() 
+    {
         System.out.println(id + "\t" + name + "\t" + salary);
     }
 
-    void raise(double percentage) {
+    void raise(double percentage) 
+    {
         salary += (percentage / 100) * salary;
     }
 }
 
-public class EDetails 
+public class Lab1 
 {
     public static void main(String[] args) 
     {
@@ -38,13 +44,21 @@ public class EDetails
         }
         System.out.println("ID\tName\tSalary\n");
         for (int i = 0; i < n; i++)
+        {
             e[i].display();
+        }
         System.out.println("Enter percentage");
         double per = s.nextDouble();
         for (int i = 0; i < n; i++)
+        {
             e[i].raise(per);
+        }
         System.out.println("ID\tName\tSalary");
         for (int i = 0; i < n; i++)
+        {
             e[i].display();
+        }
+        s.close();
     }
 }
+

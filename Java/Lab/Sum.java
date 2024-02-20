@@ -13,7 +13,7 @@ public class Sum
         System.out.println("Enter the array size should be more than 5:");
         int n=s.nextInt();
         System.out.println("Enter the array elements:");
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++) 
         {
             a[i]=s.nextInt();
         }

@@ -1,3 +1,5 @@
+//Simple Calculator(using switch case)
+
 import java.util.Scanner;
 public class Lab2a
 {

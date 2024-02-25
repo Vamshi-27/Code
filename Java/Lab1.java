@@ -1,3 +1,5 @@
+//Addition of two matrices(Command line argument)
+
 import java.util.Scanner;
 
 public class Lab1 
@@ -7,7 +9,7 @@ public class Lab1
         int i, j;
         if (args.length == 0) 
         {
-            System.out.println("Invalid Input");
+            System.out.println("Please enter the size of the array in the Command Line Argument");
             System.exit(0);
         }
         int n = Integer.parseInt(args[0]);
@@ -15,7 +17,7 @@ public class Lab1
         int b[][] = new int[n][n];
         int c[][] = new int[n][n];
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter the value of Matrix A");
+        System.out.println("Enter the elements of Matrix A");
         for (i = 0; i < n; i++) 
         {
             for (j = 0; j < n; j++)
@@ -23,7 +25,7 @@ public class Lab1
                 a[i][j] = s.nextInt();
             }
         }
-        System.out.println("Enter the value of Matrix B");
+        System.out.println("Enter the elements of Matrix B");
         for (i = 0; i < n; i++) 
         {
             for (j = 0; j < n; j++)

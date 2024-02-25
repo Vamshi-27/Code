@@ -1,3 +1,5 @@
+//Sum of first four elements in the array(using for each loop)
+
 import java.util.Scanner;
 public class Lab2c
 {

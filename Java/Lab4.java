@@ -1,3 +1,5 @@
+//Distance between two points
+
 class MyPoint 
 {
     int x, y;

@@ -1,3 +1,5 @@
+//Employee details
+
 import java.util.Scanner;
 
 class Employee

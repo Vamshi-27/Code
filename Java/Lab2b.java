@@ -1,3 +1,5 @@
+//Bill(using if-else)
+
 import java.util.Scanner;
 public class Lab2b
 {

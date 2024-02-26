@@ -1,4 +1,5 @@
 // C program to check Armstrong number
+//Ex: 153=1^3+5^3+3^3
 
 #include <stdio.h>
 #include <math.h>

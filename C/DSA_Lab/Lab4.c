@@ -1,5 +1,3 @@
-//Infix to Postfix Conversion
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -24,16 +22,17 @@ int prec(char sym)
         case '$':
         case '^':
                 return 4;
-        
+
         case '%':
         case '/':
         case '*':
                 return 3;
-        
+
         case '+':
         case '-':
+        case '=':
                 return 2;
-        
+            
         case '(':
         case ')':
         case '#':
@@ -46,16 +45,16 @@ int prec(char sym)
 
 void convertip(char infix[],char postfix[])
 {
-    char symbol;
+    char sym;
     int i,j=0;
     push('#');
     for(i=0;i<strlen(infix);i++)
     {
-        symbol=infix[i];
-        switch(symbol)
+        sym=infix[i];
+        switch(sym)
         {
             case '(':
-                    push(symbol);
+                    push(sym);
                     break;
 
             case ')':
@@ -63,20 +62,21 @@ void convertip(char infix[],char postfix[])
                         postfix[j++]=pop();
                     pop();
                     break;
-            
+
             case '$':
+            case '^':
             case '%':
             case '/':
             case '*':
             case '+':
             case '-':
-                    while(prec(symbol)<=prec(stack[top]))
+                    while(prec(sym)<=prec(stack[top]))
                         postfix[j++]=pop();
-                    push(symbol);
+                    push(sym);
                     break;
 
             default:
-                    postfix[j++]=symbol;
+                    postfix[j++]=sym;
         }
     }
     while(stack[top]!='#')
@@ -86,10 +86,10 @@ void convertip(char infix[],char postfix[])
 
 int main()
 {
-    char infix[30],postfix[30];
+    char infix[20],postfix[20];
     printf("Enter the infix expression:\n");
     scanf("%s",infix);
     convertip(infix,postfix);
-    printf("Postfix expression is\n%s\n",postfix);
+    printf("Postfix expression is \n%s\n",postfix);
     return 0;
 }

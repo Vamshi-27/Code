@@ -19,43 +19,52 @@ char pop()
     return (stack[top--]);
 }
 
-void evaluate(char postfix[50])
+void evpostfix(char postfix[])
 {
     int i;
-    char symbol;
+    char sym;
     float op1,op2,res;
+
     for(i=0;i<strlen(postfix);i++)
     {
-        symbol=postfix[i];
-        if(isdigit(symbol))
-            push(symbol-'0');
+        sym=postfix[i];
+        if(isdigit(sym))
+            push(sym-'0');
+
         else
         {
             op2=pop();
             op1=pop();
-            switch(symbol)
+            switch(sym)
             {
-                case '+':push(op1+op2);
+                case '+':
+                        push(op1+op2);
                         break;
 
-                case '-':push(op1-op2);
+                case '-':
+                        push(op1-op2);
                         break;
 
-                case '*':push(op1*op2);
+                case '*':
+                        push(op1*op2);
                         break;
 
-                case '/':push(op1/op2);
-                
-                case '^':push(pow(op1,op2));
+                case '/':
+                        push(op1/op2);
                         break;
 
-                default:printf("Invalid\n");
+                case '^':
+                        push(pow(op1,op2));
+                        break;
+
+                default:
+                        printf("Invalid\n");
                         exit(0);
             }
         }
     }
     res=pop();
-    printf("%f\n",res);
+    printf("Result=%.2f",res);
 }
 
 int main()
@@ -63,6 +72,6 @@ int main()
     char postfix[50];
     printf("Enter the postfix expression:\n");
     scanf("%s",postfix);
-    evaluate(postfix);
+    evpostfix(postfix);
     return 0;
 }

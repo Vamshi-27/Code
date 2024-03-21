@@ -1,4 +1,4 @@
-//Doubly Linked List Operations
+// Doubly Linked List Operations
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,95 +11,94 @@ struct DLL
   char desg[20];
   int sal;
   char phno[11];
-  struct DLL *prev,*next;
+  struct DLL *prev, *next;
 };
 typedef struct DLL node;
-
 node *start=NULL;
 
-node* getNode()
+node *getNode()
 {
   node *newnode;
-  newnode=(node*)malloc(sizeof(node));
+  newnode = (node *)malloc(sizeof(node));
   printf("Enter the employee details SSN,Name,Department,Designation,Salary,Phone number:\n");
-  scanf("%d%s%s%s%d%s",&newnode->ssn,newnode->name,newnode->dept,newnode->desg,&newnode->sal,newnode->phno);
-  newnode->prev=NULL;
-  newnode->next=NULL;
+  scanf("%d%s%s%s%d%s", &newnode->ssn, newnode->name, newnode->dept, newnode->desg, &newnode->sal, newnode->phno);
+  newnode->prev = NULL;
+  newnode->next = NULL;
   return newnode;
 }
 void insertbegin()
 {
   node *newnode;
-  newnode=getNode();
-  if(start==NULL)
-    start=newnode;
+  newnode = getNode();
+  if (start == NULL)
+    start = newnode;
   else
   {
-    newnode->next=start;
-    start->prev=newnode;
-    start=newnode;
+    newnode->next = start;
+    start->prev = newnode;
+    start = newnode;
   }
 }
-void insertend() 
+void insertend()
 {
-  node *newnode,*temp=start;
-  newnode=getNode();
-  if(start==NULL)
+  node *newnode, *temp = start;
+  newnode = getNode();
+  if (start == NULL)
   {
     start = newnode;
     return;
   }
-  while(temp->next != NULL)
+  while (temp->next != NULL)
   {
-    temp=temp->next;
+    temp = temp->next;
   }
-  temp->next=newnode;
-  newnode->prev=temp;
+  temp->next = newnode;
+  newnode->prev = temp;
 }
 void deletebegin()
 {
-  node *temp=start;
-  if(start==NULL)
+  node *temp = start;
+  if (start == NULL)
   {
     printf("List is empty\n");
     return;
   }
-  printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n",temp->ssn,temp->name,temp->dept,temp->desg,temp->sal,temp->phno);
-  start->prev=NULL;
-  start=temp->next;
+  printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n", temp->ssn, temp->name, temp->dept, temp->desg, temp->sal, temp->phno);
+  start->prev = NULL;
+  start = temp->next;
   free(temp);
 }
-void deleteend() 
+void deleteend()
 {
-  node *temp=start;
-  if(start==NULL) 
+  node *temp = start;
+  if (start == NULL)
   {
     printf("List is empty\n");
     return;
   }
-  if(start->next==NULL) 
+  if (start->next == NULL)
   {
-    printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n",temp->ssn,temp->name,temp->dept,temp->desg,temp->sal,temp->phno);
+    printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n", temp->ssn, temp->name, temp->dept, temp->desg, temp->sal, temp->phno);
     start = NULL;
     free(temp);
-  } 
-  else 
+  }
+  else
   {
-    while(temp->next != NULL)
+    while (temp->next != NULL)
     {
-      temp=temp->next;
+      temp = temp->next;
     }
-    (temp->prev)->next=NULL;
-    printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n",temp->ssn,temp->name,temp->dept,temp->desg,temp->sal,temp->phno);
+    (temp->prev)->next = NULL;
+    printf("Deleted node is\n%d\t%s\t%s\t%s\t%d\t%s\n", temp->ssn, temp->name, temp->dept, temp->desg, temp->sal, temp->phno);
     free(temp);
   }
 }
 
 void display()
 {
-  node *temp=start;
-  int count=0;
-  if (start==NULL)
+  node *temp = start;
+  int count = 0;
+  if (start == NULL)
   {
     printf("List is empty\n");
     return;
@@ -107,46 +106,46 @@ void display()
   printf("List elements are\n");
   while (temp != NULL)
   {
-    printf("%d\t%s\t%s\t%d\t%s\n ",temp->ssn,temp->name,temp->desg,temp->sal,temp->phno);
-    temp=temp->next;
+    printf("%d\t%s\t%s\t%d\t%s\n ", temp->ssn, temp->name, temp->desg, temp->sal, temp->phno);
+    temp = temp->next;
     count++;
   }
-  printf("No of employees=%d\n",count);
+  printf("No of employees=%d\n", count);
 }
 
 int main()
 {
-  int choice,n,i;
-  while(1) 
+  int choice, n, i;
+  while (1)
   {
     printf("Enter your choice\n1 for InsertEnd\n2 for InsertBegin\n3 for DeleteBegin\n4 for DeleteEnd\n5 for Display\n6 for Exit\n");
-    scanf("%d",&choice);
-    switch(choice)
+    scanf("%d", &choice);
+    switch (choice)
     {
-      case 1:
-            printf("Enter the no of employees\n");
-            scanf("%d",&n);
-            for(i=0;i<n;i++)
-            {
-                insertend();
-            }
-            break;
-      case 2:
-            insertbegin();
-            break;
-      case 3:
-            deletebegin();
-            break;
-      case 4:
-            deleteend();
-            break;
-      case 5:
-            display();
-            break;
-      case 6:
-            exit(0);
-      default:
-            printf("Invalid choice\n");
+    case 1:
+      printf("Enter the no of employees\n");
+      scanf("%d", &n);
+      for (i = 0; i < n; i++)
+      {
+        insertend();
+      }
+      break;
+    case 2:
+      insertbegin();
+      break;
+    case 3:
+      deletebegin();
+      break;
+    case 4:
+      deleteend();
+      break;
+    case 5:
+      display();
+      break;
+    case 6:
+      exit(0);
+    default:
+      printf("Invalid choice\n");
     }
   }
 }

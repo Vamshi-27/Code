@@ -1,4 +1,4 @@
-//Polynomial Operations
+//Polynomial
 
 #include <math.h>
 #include <stdio.h>

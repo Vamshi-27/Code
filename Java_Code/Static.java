@@ -1,6 +1,7 @@
 //Static->It is used to create a member that can be accessed without creating an object.
 
 //Program to count number of objects created.
+package Java_Code;
 public class Static 
 {
     static int count=0;

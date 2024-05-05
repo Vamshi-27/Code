@@ -1,4 +1,5 @@
 //Constructor->Special method to initialize the instance variables.
+package Java_Code;
 
 public class Constructor
 {;

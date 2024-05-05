@@ -1,4 +1,5 @@
 //Usage of this keyword
+package Java_Code;
 
 public class InstanceVar 
 {
